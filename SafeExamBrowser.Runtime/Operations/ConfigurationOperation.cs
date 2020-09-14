@@ -26,6 +26,7 @@ namespace SafeExamBrowser.Runtime.Operations
 		private IFileSystem fileSystem;
 		private IHashAlgorithm hashAlgorithm;
 		private ILogger logger;
+		private readonly AppConfig appConfig;
 
 		public override event ActionRequiredEventHandler ActionRequired;
 		public override event StatusChangedEventHandler StatusChanged;
@@ -36,11 +37,13 @@ namespace SafeExamBrowser.Runtime.Operations
 			IFileSystem fileSystem,
 			IHashAlgorithm hashAlgorithm,
 			ILogger logger,
+			AppConfig aConfig,
 			SessionContext sessionContext) : base(commandLineArgs, configuration, sessionContext)
 		{
 			this.fileSystem = fileSystem;
 			this.hashAlgorithm = hashAlgorithm;
 			this.logger = logger;
+			this.appConfig = aConfig;
 		}
 
 		public override OperationResult Perform()
@@ -367,7 +370,20 @@ namespace SafeExamBrowser.Runtime.Operations
 			if (commandLineArgs?.Length > 1)
 			{
 				isValidUri = Uri.TryCreate(commandLineArgs[1], UriKind.Absolute, out uri);
-				source = UriSource.CommandLine;
+
+				// configuration passed via Custom Protocol
+				if (isValidUri)
+				{
+					if (uri.Scheme == appConfig.SebUriScheme || uri.Scheme == appConfig.SebUriSchemeSecure)
+					{
+						source = UriSource.Server;
+					}
+					else
+					{
+						source = UriSource.CommandLine;
+					}
+				}
+				
 				logger.Info($"Found command-line argument for configuration resource: '{uri}', the URI is {(isValidUri ? "valid" : "invalid")}.");
 			}
 
