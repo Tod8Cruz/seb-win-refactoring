@@ -16,6 +16,7 @@ using SafeExamBrowser.Communication.Contracts.Proxies;
 using SafeExamBrowser.Configuration.Contracts;
 using SafeExamBrowser.Core.Contracts.OperationModel;
 using SafeExamBrowser.Core.Contracts.OperationModel.Events;
+using SafeExamBrowser.CustomProtocol.Registrator;
 using SafeExamBrowser.I18n.Contracts;
 using SafeExamBrowser.Logging.Contracts;
 using SafeExamBrowser.Runtime.Operations.Events;
@@ -102,6 +103,39 @@ namespace SafeExamBrowser.Runtime
 			if (initialized)
 			{
 				RegisterEvents();
+				logger.Info("Registering custom URL protocols...");
+
+				if (Installer.IsProtocolAlreadyRegistered("seb"))
+				{
+					logger.Info("Custom URL protocol (seb) already registered. Skipping.");
+				}
+				else
+				{
+					if (Installer.RegisterProtocol("seb", System.Reflection.Assembly.GetExecutingAssembly().Location))
+					{
+						logger.Info("Custom URL protocols (seb) successfully registered.");
+					}
+					else
+					{
+						logger.Info("Failed to register custom URL protocol (seb).");
+					}
+				}
+
+				if (Installer.IsProtocolAlreadyRegistered("sebs"))
+				{
+					logger.Info("Custom URL protocol (sebs) already registered. Skipping.");
+				}
+				else
+				{
+					if (Installer.RegisterProtocol("sebs", System.Reflection.Assembly.GetExecutingAssembly().Location))
+					{
+						logger.Info("Custom URL protocol (sebs) successfully registered.");
+					}
+					else
+					{
+						logger.Info("Failed to register custom URL protocol (sebs).");
+					}
+				}
 
 				logger.Info("Application successfully initialized.");
 				logger.Log(string.Empty);

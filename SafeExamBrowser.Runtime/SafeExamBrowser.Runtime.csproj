@@ -165,6 +165,10 @@
       <Project>{3d6fdbb6-a4af-4626-bb2b-bf329d44f9cc}</Project>
       <Name>SafeExamBrowser.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SafeExamBrowser.CustomProtocol.Registrator\SafeExamBrowser.CustomProtocol.Registrator.csproj">
+      <Project>{445fb2da-05b4-4508-8877-d42aafd8171b}</Project>
+      <Name>SafeExamBrowser.CustomProtocol.Registrator</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SafeExamBrowser.I18n.Contracts\SafeExamBrowser.I18n.Contracts.csproj">
       <Project>{1858ddf3-bc2a-4bff-b663-4ce2ffeb8b7d}</Project>
       <Name>SafeExamBrowser.I18n.Contracts</Name>
