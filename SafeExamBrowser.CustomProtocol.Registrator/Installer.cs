@@ -10,10 +10,8 @@ namespace SafeExamBrowser.CustomProtocol.Registrator
 			{
 				var key = Registry.CurrentUser.OpenSubKey(@"Software\Classes", false);
 				var rkRoot = key.OpenSubKey(protocolName, RegistryKeyPermissionCheck.ReadSubTree);
-				var rkRootDefValue = rkRoot.GetValue("");
 				var rkRootUrlProtocolValue = rkRoot.GetValue("URL Protocol");
 
-				if ((rkRootDefValue as string) != $"URL:{protocolName} Protocol") return false;
 				if ((rkRootUrlProtocolValue as string) != "") return false;
 
 				var rkShell = rkRoot.OpenSubKey("shell", RegistryKeyPermissionCheck.ReadSubTree);
@@ -35,7 +33,17 @@ namespace SafeExamBrowser.CustomProtocol.Registrator
 			{
 				var key = Registry.CurrentUser.OpenSubKey(@"Software\Classes", true);
 				var rkRoot = key.CreateSubKey(protocolName, RegistryKeyPermissionCheck.ReadWriteSubTree);
-				rkRoot.SetValue("", $"URL:{protocolName} Protocol");
+
+				var protocolDescription = $"URL:{protocolName} Protocol";
+				if (protocolName == "seb")
+				{
+					protocolDescription = "URL: Safe Exam Browser Protocol";
+				} else if (protocolName == "sebs")
+				{
+					protocolDescription = "URL: Safe Exam Browser Secure Protocol";
+				}
+
+				rkRoot.SetValue("", protocolDescription);
 				rkRoot.SetValue("URL Protocol", "");
 				var rkIcon = rkRoot.CreateSubKey("DefaultIcon");
 				rkIcon.SetValue("", appPath + ", 1");
