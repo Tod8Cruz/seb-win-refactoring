@@ -34,7 +34,7 @@ namespace SafeExamBrowser.CustomProtocol.Registrator
 				var key = Registry.CurrentUser.OpenSubKey(@"Software\Classes", true);
 				var rkRoot = key.CreateSubKey(protocolName, RegistryKeyPermissionCheck.ReadWriteSubTree);
 
-				var protocolDescription = $"URL:{protocolName} Protocol";
+				var protocolDescription = $"URL: {protocolName} Protocol";
 				if (protocolName == "seb")
 				{
 					protocolDescription = "URL: Safe Exam Browser Protocol";

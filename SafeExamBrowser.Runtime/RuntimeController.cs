@@ -103,39 +103,9 @@ namespace SafeExamBrowser.Runtime
 			if (initialized)
 			{
 				RegisterEvents();
-				logger.Info("Registering custom URL protocols...");
-
-				if (Installer.IsProtocolAlreadyRegistered("seb"))
-				{
-					logger.Info("Custom URL protocol (seb) already registered. Skipping.");
-				}
-				else
-				{
-					if (Installer.RegisterProtocol("seb", System.Reflection.Assembly.GetExecutingAssembly().Location))
-					{
-						logger.Info("Custom URL protocols (seb) successfully registered.");
-					}
-					else
-					{
-						logger.Info("Failed to register custom URL protocol (seb).");
-					}
-				}
-
-				if (Installer.IsProtocolAlreadyRegistered("sebs"))
-				{
-					logger.Info("Custom URL protocol (sebs) already registered. Skipping.");
-				}
-				else
-				{
-					if (Installer.RegisterProtocol("sebs", System.Reflection.Assembly.GetExecutingAssembly().Location))
-					{
-						logger.Info("Custom URL protocol (sebs) successfully registered.");
-					}
-					else
-					{
-						logger.Info("Failed to register custom URL protocol (sebs).");
-					}
-				}
+				
+				RegisterCustomUrlProtocol(appConfig.SebUriScheme);
+				RegisterCustomUrlProtocol(appConfig.SebUriSchemeSecure);
 
 				logger.Info("Application successfully initialized.");
 				logger.Log(string.Empty);
@@ -153,6 +123,21 @@ namespace SafeExamBrowser.Runtime
 			}
 
 			return initialized && SessionIsRunning;
+		}
+
+		internal void RegisterCustomUrlProtocol(string protocolName)
+		{
+			if (Installer.IsProtocolAlreadyRegistered(protocolName))
+			{
+				logger.Info($"Custom URL protocol ({protocolName}) already registered. Skipping.");
+			}
+			else
+			{
+				logger.Info(
+					Installer.RegisterProtocol(protocolName, System.Reflection.Assembly.GetExecutingAssembly().Location)
+						? $"Custom URL protocols ({protocolName}) successfully registered."
+						: $"Failed to register custom URL protocol ({protocolName}).");
+			}
 		}
 
 		internal void Terminate()
