@@ -10,7 +10,7 @@
                         DownloadUrl="https://github.com/SafeExamBrowser/Chrominimum/releases/download/1.0.0/Chrominimum_1.0.0.10_SetupBundle.exe"
                         InstallCommand="/install /quiet /norestart" RepairCommand="/repair /quiet /norestart" UninstallCommand="/uninstall /quiet /norestart" >
                 <!-- Must be generated with the following command: "heat payload Chrominimum_1.0.0.10_SetupBundle.exe -out Chrominimum.wxs" -->
-                <RemotePayload Description="Chrominimum_1" Hash="3f49a1b04ee849f0dbf9da2809699b904f0eb754"
+                <RemotePayload Description="Chrominimum" Hash="3f49a1b04ee849f0dbf9da2809699b904f0eb754"
                                ProductName="Chrominimum" Size="150969552" Version="1.0.0.10" />
             </ExePackage>
         </PackageGroup>

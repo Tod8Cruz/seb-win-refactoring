@@ -10,11 +10,11 @@
         <Chain>
             <PackageGroupRef Id="DotNetFramework" />
             <PackageGroupRef Id="VisualCppRuntime" />
-            <PackageGroupRef Id="Chrominimum" />
             <MsiPackage Id="SetupX64" InstallCondition='VersionNT64' SourceFile="$(var.Setup.ProjectDir)bin\x64\Release\$(var.Setup.TargetFileName)"
                         Compressed="yes" DisplayInternalUI="no" Vital="yes" />
             <MsiPackage Id="SetupX86" InstallCondition='NOT VersionNT64' SourceFile="$(var.Setup.ProjectDir)bin\x86\Release\$(var.Setup.TargetFileName)"
                         Compressed="yes" DisplayInternalUI="no" Vital="yes" />
+            <PackageGroupRef Id="Chrominimum" />
         </Chain>
     </Bundle>
 </Wix>
