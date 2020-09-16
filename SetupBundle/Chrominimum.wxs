@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
     <Fragment>
-        <!-- Must be the same value as the version specified by the RemotePayload -->
-        <Variable Name="ChrominimumVersion" Type="version" Value="1.0.0.10" />
-        <util:ProductSearch Variable="ChrominimumInstalledVersion" UpgradeCode="4217C3CD-E0C2-4B6F-A033-D3A7088AFD42" />
         <PackageGroup Id="Chrominimum">
-            <ExePackage Name="Chrominimum_1.0.0.10_SetupBundle.exe" DisplayName="Chrominimum redistributable package for Safe Exam Browser Version 1.0.0.10" Cache="no"
-                        Compressed="no" DetectCondition="ChrominimumInstalledVersion >= ChrominimumVersion"
-                        DownloadUrl="https://github.com/SafeExamBrowser/Chrominimum/releases/download/1.0.0/Chrominimum_1.0.0.10_SetupBundle.exe"
-                        InstallCommand="/install /quiet /norestart" RepairCommand="/repair /quiet /norestart" UninstallCommand="/uninstall /quiet /norestart" >
-                <!-- Must be generated with the following command: "heat payload Chrominimum_1.0.0.10_SetupBundle.exe -out Chrominimum.wxs" -->
-                <RemotePayload Description="Chrominimum" Hash="3f49a1b04ee849f0dbf9da2809699b904f0eb754"
-                               ProductName="Chrominimum" Size="150969552" Version="1.0.0.10" />
-            </ExePackage>
+          <MsiPackage  SourceFile=".\chrominimum\Chrominimum_1.1.0.21_x64_Setup.msi" 
+                       DisplayName="Chrominimum package for Safe Exam Browser" 
+                       Cache="no"
+                       Compressed="yes" 
+                       Visible="yes"
+                       Permanent="yes"
+                       InstallCondition="VersionNT64"
+                       DownloadUrl="https://github.com/SafeExamBrowser/Chrominimum/releases/download/1.1.0/Chrominimum_1.1.0.21_x64_Setup.msi">
+            </MsiPackage>
+          <MsiPackage  SourceFile=".\chrominimum\Chrominimum_1.1.0.21_x86_Setup.msi"
+                       DisplayName="Chrominimum package for Safe Exam Browser"
+                       Cache="no"
+                       Compressed="yes" 
+                       Visible="yes"
+                       Permanent="yes"
+                       InstallCondition="VersionNT64"
+                       DownloadUrl="https://github.com/SafeExamBrowser/Chrominimum/releases/download/1.1.0/Chrominimum_1.1.0.21_x86_Setup.msi" >
+          </MsiPackage>
         </PackageGroup>
     </Fragment>
 </Wix>
