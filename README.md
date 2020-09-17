@@ -66,3 +66,4 @@ Since we don't have a configured certificate, we should reconfigure it:
 - Check "Pre-Build" events. For each line which starting from "signtool" please check parameter options and modify it for a proper certificate
 - Also please check files "Setup.wixproj" and "SetupBundle.wixproj" in editor (like notepad) for a correct signtool parameters.
 
+!!!
