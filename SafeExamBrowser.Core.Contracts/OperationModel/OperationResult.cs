@@ -26,6 +26,11 @@ namespace SafeExamBrowser.Core.Contracts.OperationModel
 		/// <summary>
 		/// Indicates that the operation has been executed successfully.
 		/// </summary>
-		Success
+		Success,
+
+		/// <summary>
+		/// Indicates that operation is forbidden because some conditions were not met
+		/// </summary>
+		Forbidden
 	}
 }

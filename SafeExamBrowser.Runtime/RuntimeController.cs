@@ -98,6 +98,7 @@ namespace SafeExamBrowser.Runtime
 			splashScreen.Show();
 			splashScreen.BringToForeground();
 
+
 			var initialized = bootstrapSequence.TryPerform() == OperationResult.Success;
 
 			if (initialized)
@@ -208,6 +209,12 @@ namespace SafeExamBrowser.Runtime
 
 				HandleSessionStartAbortion();
 			}
+			else if (result == OperationResult.Forbidden)
+			{
+				logger.Info(AppendDivider("Session Start Forbidden"));
+
+				HandleSessionStartForbidden();
+			}
 		}
 
 		private void HandleSessionStartSuccess()
@@ -239,6 +246,23 @@ namespace SafeExamBrowser.Runtime
 			else
 			{
 				messageBox.Show(TextKey.MessageBox_SessionStartError, TextKey.MessageBox_SessionStartErrorTitle, icon: MessageBoxIcon.Error, parent: runtimeWindow);
+			}
+		}
+
+		private void HandleSessionStartForbidden()
+		{
+			if (SessionIsRunning)
+			{
+				StopSession();
+
+				messageBox.Show(TextKey.Application_ExecutedDirectly, TextKey.Application_ExecutedDirectlyTitle, icon: MessageBoxIcon.Error, parent: runtimeWindow);
+
+				logger.Info("Terminating application...");
+				shutdown.Invoke();
+			}
+			else
+			{
+				messageBox.Show(TextKey.Application_ExecutedDirectly, TextKey.Application_ExecutedDirectlyTitle, icon: MessageBoxIcon.Error, parent: runtimeWindow);
 			}
 		}
 

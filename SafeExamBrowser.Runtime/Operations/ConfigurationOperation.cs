@@ -60,7 +60,8 @@ namespace SafeExamBrowser.Runtime.Operations
 			}
 			else
 			{
-				result = LoadDefaultSettings();
+				//result = LoadDefaultSettings();
+				result = OperationResult.Forbidden;
 			}
 
 			LogOperationResult(result);
@@ -115,28 +116,28 @@ namespace SafeExamBrowser.Runtime.Operations
 			var settings = default(AppSettings);
 			var status = default(LoadStatus?);
 
-			if (source == UriSource.CommandLine)
+			if (source == UriSource.CommandLine || source == UriSource.Server)
 			{
-				var hasAppDataFile = File.Exists(AppDataFilePath);
-				var hasProgramDataFile = File.Exists(ProgramDataFilePath);
+				//	var hasAppDataFile = File.Exists(AppDataFilePath);
+				//	var hasProgramDataFile = File.Exists(ProgramDataFilePath);
 
-				if (hasProgramDataFile)
-				{
-					status = TryLoadSettings(new Uri(ProgramDataFilePath, UriKind.Absolute), UriSource.ProgramData, out _, out settings);
-				}
-				else if (hasAppDataFile)
-				{
-					status = TryLoadSettings(new Uri(AppDataFilePath, UriKind.Absolute), UriSource.AppData, out _, out settings);
-				}
+				//	if (hasProgramDataFile)
+				//	{
+				//		status = TryLoadSettings(new Uri(ProgramDataFilePath, UriKind.Absolute), UriSource.ProgramData, out _, out settings);
+				//	}
+				//	else if (hasAppDataFile)
+				//	{
+				//		status = TryLoadSettings(new Uri(AppDataFilePath, UriKind.Absolute), UriSource.AppData, out _, out settings);
+				//	}
 
-				if ((!hasProgramDataFile && !hasAppDataFile) || status == LoadStatus.Success)
-				{
-					currentPassword = settings?.Security.AdminPasswordHash;
-					status = TryLoadSettings(uri, source, out passwordParams, out settings, currentPassword);
-				}
-			}
-			else
-			{
+				//	if ((!hasProgramDataFile && !hasAppDataFile) || status == LoadStatus.Success)
+				//	{
+				//		currentPassword = settings?.Security.AdminPasswordHash;
+				//		status = TryLoadSettings(uri, source, out passwordParams, out settings, currentPassword);
+				//	}
+				//}
+				//else 
+				//{
 				status = TryLoadSettings(uri, source, out passwordParams, out settings);
 			}
 
@@ -217,18 +218,18 @@ namespace SafeExamBrowser.Runtime.Operations
 
 		private OperationResult HandleClientConfiguration(Uri uri, PasswordParameters passwordParams, string currentPassword = default(string))
 		{
-			var isFirstSession = Context.Current == null;
-			var success = TryConfigureClient(uri, passwordParams, currentPassword);
+			//var isFirstSession = Context.Current == null;
+			//var success = TryConfigureClient(uri, passwordParams, currentPassword);
 			var result = OperationResult.Failed;
 
-			if (!success.HasValue || (success == true && isFirstSession && AbortAfterClientConfiguration()))
-			{
-				result = OperationResult.Aborted;
-			}
-			else if (success == true)
-			{
+			//if (!success.HasValue || (success == true && isFirstSession && AbortAfterClientConfiguration()))
+			//{
+			//	result = OperationResult.Aborted;
+			//}
+			//else if (success == true)
+			//{
 				result = OperationResult.Success;
-			}
+			//}
 
 			return result;
 		}
@@ -380,26 +381,35 @@ namespace SafeExamBrowser.Runtime.Operations
 					}
 					else
 					{
-						source = UriSource.CommandLine;
+						if (commandLineArgs?.Length > 2 && !string.IsNullOrEmpty(commandLineArgs[2]) &&
+						    commandLineArgs[2].ToLower() == "--debug")
+						{
+							source = UriSource.CommandLine;
+							logger.Info($"Debug mode key found.");
+						}
+						else
+						{
+							isValidUri = false;
+						}
 					}
 				}
 				
 				logger.Info($"Found command-line argument for configuration resource: '{uri}', the URI is {(isValidUri ? "valid" : "invalid")}.");
 			}
 
-			if (!isValidUri && File.Exists(ProgramDataFilePath))
-			{
-				isValidUri = Uri.TryCreate(ProgramDataFilePath, UriKind.Absolute, out uri);
-				source = UriSource.ProgramData;
-				logger.Info($"Found configuration file in program data directory: '{uri}'.");
-			}
+			//if (!isValidUri && File.Exists(ProgramDataFilePath))
+			//{
+			//	isValidUri = Uri.TryCreate(ProgramDataFilePath, UriKind.Absolute, out uri);
+			//	source = UriSource.ProgramData;
+			//	logger.Info($"Found configuration file in program data directory: '{uri}'.");
+			//}
 
-			if (!isValidUri && File.Exists(AppDataFilePath))
-			{
-				isValidUri = Uri.TryCreate(AppDataFilePath, UriKind.Absolute, out uri);
-				source = UriSource.AppData;
-				logger.Info($"Found configuration file in app data directory: '{uri}'.");
-			}
+			//if (!isValidUri && File.Exists(AppDataFilePath))
+			//{
+			//	isValidUri = Uri.TryCreate(AppDataFilePath, UriKind.Absolute, out uri);
+			//	source = UriSource.AppData;
+			//	logger.Info($"Found configuration file in app data directory: '{uri}'.");
+			//}
 
 			return isValidUri;
 		}

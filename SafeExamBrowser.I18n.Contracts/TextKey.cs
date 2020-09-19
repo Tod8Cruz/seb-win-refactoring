@@ -16,6 +16,8 @@ namespace SafeExamBrowser.I18n.Contracts
 	{
 		AboutWindow_LicenseInfo,
 		AboutWindow_Title,
+		Application_ExecutedDirectly,
+		Application_ExecutedDirectlyTitle,
 		Browser_BlockedContentMessage,
 		Browser_BlockedPageButton,
 		Browser_BlockedPageMessage,

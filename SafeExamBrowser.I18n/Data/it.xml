@@ -6,6 +6,12 @@
     <Entry key="AboutWindow_Title">
         Versione &amp; Informazioni sulla licenza
     </Entry>
+    <Entry key="Application_ExecutedDirectly">
+        Monito is well installed. This program is only executable from monito test page
+    </Entry>
+    <Entry key="Application_ExecutedDirectlyTitle">
+        Application starting error
+    </Entry>
     <Entry key="Browser_BlockedContentMessage">
         Contenuto bloccato
     </Entry>
