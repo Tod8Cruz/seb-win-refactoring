@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using SafeExamBrowser.Configuration.Contracts;
 
 namespace SafeExamBrowser.CustomProtocol.Registrator
 {
@@ -27,7 +28,7 @@ namespace SafeExamBrowser.CustomProtocol.Registrator
 			return true;
 		}
 
-		public static bool RegisterProtocol(string protocolName, string appPath)
+		public static bool RegisterProtocol(AppConfig appConfig, string protocolName, string appPath)
 		{
 			try
 			{
@@ -35,12 +36,12 @@ namespace SafeExamBrowser.CustomProtocol.Registrator
 				var rkRoot = key.CreateSubKey(protocolName, RegistryKeyPermissionCheck.ReadWriteSubTree);
 
 				var protocolDescription = $"URL: {protocolName} Protocol";
-				if (protocolName == "seb")
+				if (protocolName == appConfig.SebUriScheme)
 				{
-					protocolDescription = "URL: Safe Exam Browser Protocol";
-				} else if (protocolName == "sebs")
+					protocolDescription = "URL: Monito Protocol";
+				} else if (protocolName == appConfig.SebUriSchemeSecure)
 				{
-					protocolDescription = "URL: Safe Exam Browser Secure Protocol";
+					protocolDescription = "URL: Monito Secure Protocol";
 				}
 
 				rkRoot.SetValue("", protocolDescription);

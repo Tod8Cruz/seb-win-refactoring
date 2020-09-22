@@ -20,14 +20,14 @@
                 <wix:Verb Id="open" Command="Open" Argument="&quot;%1&quot;" TargetFile="MainExecutable" />
             </wix:Extension>
         </wix:ProgId>
-        <wix:RegistryKey Root="HKCR" Key="seb">
-            <wix:RegistryValue Value="URL:Safe Exam Browser Protocol" Type="string" />
+        <wix:RegistryKey Root="HKCR" Key="monito">
+            <wix:RegistryValue Value="URL:Monito Protocol" Type="string" />
             <wix:RegistryValue Name="URL Protocol" Value="" Type="string" />
             <wix:RegistryValue Key="DefaultIcon" Value="[#ApplicationIconFile]" Type="string" />
             <wix:RegistryValue Key="shell\open\command" Value="&quot;[ApplicationDirectory]$(var.SafeExamBrowser.Runtime.TargetFileName)&quot; &quot;%1&quot;" Type="string" />
         </wix:RegistryKey>
-        <wix:RegistryKey Root="HKCR" Key="sebs">
-            <wix:RegistryValue Value="URL:Safe Exam Browser Secure Protocol" Type="string" />
+        <wix:RegistryKey Root="HKCR" Key="smonito">
+            <wix:RegistryValue Value="URL:Monito Secure Protocol" Type="string" />
             <wix:RegistryValue Name="URL Protocol" Value="" Type="string" />
             <wix:RegistryValue Key="DefaultIcon" Value="[#ApplicationIconFile]" Type="string" />
             <wix:RegistryValue Key="shell\open\command" Value="&quot;[ApplicationDirectory]$(var.SafeExamBrowser.Runtime.TargetFileName)&quot; &quot;%1&quot;" Type="string" />

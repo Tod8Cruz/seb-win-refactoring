@@ -67,8 +67,8 @@ namespace SafeExamBrowser.Configuration.ConfigurationData
 			appConfig.RuntimeId = Guid.NewGuid();
 			appConfig.RuntimeAddress = $"{AppConfig.BASE_ADDRESS}/runtime/{Guid.NewGuid()}";
 			appConfig.RuntimeLogFilePath = Path.Combine(logFolder, $"{logFilePrefix}_Runtime.log");
-			appConfig.SebUriScheme = "seb";
-			appConfig.SebUriSchemeSecure = "sebs";
+			appConfig.SebUriScheme = "monito";
+			appConfig.SebUriSchemeSecure = "smonito";
 			appConfig.ServiceAddress = $"{AppConfig.BASE_ADDRESS}/service";
 			appConfig.ServiceEventName = $@"Global\{nameof(SafeExamBrowser)}-{Guid.NewGuid()}";
 			appConfig.ServiceLogFilePath = Path.Combine(logFolder, $"{logFilePrefix}_Service.log");

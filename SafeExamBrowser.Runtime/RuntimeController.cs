@@ -135,7 +135,7 @@ namespace SafeExamBrowser.Runtime
 			else
 			{
 				logger.Info(
-					Installer.RegisterProtocol(protocolName, System.Reflection.Assembly.GetExecutingAssembly().Location)
+					Installer.RegisterProtocol(appConfig, protocolName, System.Reflection.Assembly.GetExecutingAssembly().Location)
 						? $"Custom URL protocols ({protocolName}) successfully registered."
 						: $"Failed to register custom URL protocol ({protocolName}).");
 			}
