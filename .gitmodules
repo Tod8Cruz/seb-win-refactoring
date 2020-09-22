@@ -1,0 +1,3 @@
+[submodule "Chrominimum"]
+	path = Chrominimum
+	url = https://github.com/grepp/Chrominimum.git
