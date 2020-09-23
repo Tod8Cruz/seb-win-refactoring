@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Text>
+    <Entry key="AboutWindow_LicenseInfo">
+        본 브라우저는 Mozilla Public License, version 2.0에 영향을 받습니다. 본 브라우저는 다음 프레임워크와 서드파티 라이브러리를 사용합니다:
+    </Entry>
+    <Entry key="AboutWindow_Title">
+        Version &amp; License Information
+    </Entry>
+    <Entry key="Application_ExecutedDirectly">
+        모니토가 설치되었습니다. 본 프로그램은 모니토 서비스의 시험 페이지를 통해서만 실행할 수 있습니다.
+    </Entry>
+    <Entry key="Application_ExecutedDirectlyTitle">
+        프로그램 시작 에러
+    </Entry>
+    <Entry key="Browser_BlockedContentMessage">
+        차단된 콘텐츠
+    </Entry>
+    <Entry key="Browser_BlockedPageButton">
+        이전 페이지로 이동
+    </Entry>
+    <Entry key="Browser_BlockedPageMessage">
+        현재 환경 설정 상태에서는 본 페이지에 접근할 수 없습니다.
+    </Entry>
+    <Entry key="Browser_BlockedPageTitle">
+        차단된 페이지
+    </Entry>
+    <Entry key="Browser_LoadErrorMessage">
+        "%%URL%%" 페이지 로딩 중 에러 발생
+    </Entry>
+    <Entry key="Browser_LoadErrorTitle">
+        페이지 로딩 중 에러 발생
+    </Entry>
+    <Entry key="Browser_Name">
+        브라우저
+    </Entry>
+    <Entry key="Browser_Tooltip">
+        브라우저 어플리케이션
+    </Entry>
+    <Entry key="BrowserWindow_DeveloperConsoleMenuItem">
+        Developer Console
+    </Entry>
+    <Entry key="BrowserWindow_Downloading">
+        다운로드 중..
+    </Entry>
+    <Entry key="BrowserWindow_DownloadCancelled">
+        취소됨.
+    </Entry>
+    <Entry key="BrowserWindow_DownloadComplete">
+        다운로드 완료.
+    </Entry>
+    <Entry key="BrowserWindow_FindCaseSensitive">
+        Case-sensitive search
+    </Entry>
+    <Entry key="BrowserWindow_FindMenuItem">
+        페이지 검색...
+    </Entry>
+    <Entry key="BrowserWindow_ZoomMenuItem">
+        페이지 확대/축소
+    </Entry>
+    <Entry key="Build">
+        Build
+    </Entry>
+    <Entry key="ExamSelectionDialog_Cancel">
+        취소
+    </Entry>
+    <Entry key="ExamSelectionDialog_Message">
+        다음 SEB-Server 시험 중 하나를 선택하세요:
+    </Entry>
+    <Entry key="ExamSelectionDialog_Select">
+        선택
+    </Entry>
+    <Entry key="ExamSelectionDialog_Title">
+        SEB-Server 시험
+    </Entry>
+    <Entry key="FileSystemDialog_Cancel">
+        취소
+    </Entry>
+    <Entry key="FileSystemDialog_LoadError">
+        데이터를 로딩하지 못하였습니다.
+    </Entry>
+    <Entry key="FileSystemDialog_Loading">
+        로딩 중...
+    </Entry>
+    <Entry key="FileSystemDialog_OpenFileMessage">
+        파일을 선택하세요.
+    </Entry>
+    <Entry key="FileSystemDialog_OpenFolderMessage">
+        폴더를 선택하세요.
+    </Entry>
+    <Entry key="FileSystemDialog_OverwriteWarning">
+        선택한 파일이 이미 존재합니다. 파일을 덮어쓸까요?
+    </Entry>
+    <Entry key="FileSystemDialog_OverwriteWarningTitle">
+        파일을 덮어쓸까요?
+    </Entry>
+    <Entry key="FileSystemDialog_SaveAs">
+        다른 이름으로 저장:
+    </Entry>
+    <Entry key="FileSystemDialog_SaveFileMessage">
+        파일을 저장할 위치를 선택하세요.
+    </Entry>
+    <Entry key="FileSystemDialog_SaveFolderMessage">
+        폴더를 저장할 위치를 선택하세요.
+    </Entry>
+    <Entry key="FileSystemDialog_Select">
+        선택
+    </Entry>
+    <Entry key="FileSystemDialog_Title">
+        파일 시스템 접근
+    </Entry>
+    <Entry key="FolderDialog_ApplicationLocation">
+        "%%NAME%%" 어플리케이션을 시스템에서 찾을 수 없습니다. "%%EXECUTABLE%%" 폴더를 지정해주세요.
+    </Entry>
+    <Entry key="LockScreen_ApplicationsAllowOption">
+        블랙리스트에 등록된 어플리케이션을 한시적으로 사용 허가합니다. 본 허가는 현재 실행 중인 인스턴스와 세션에서만 유효합니다.
+    </Entry>
+    <Entry key="LockScreen_ApplicationsMessage">
+        다음 블랙리스트에 등록된 어플리케이션은 현재 실행 중이나 자동으로 종료를 할 수 없습니다. 브라우저를 잠금 해제하려면 정확한 비밀번호를 입력하세요.
+    </Entry>
+    <Entry key="LockScreen_ApplicationsTerminateOption">
+        브라우저를 종료합니다.
+    </Entry>
+    <Entry key="LockScreen_Title">
+        브라우저가 잠김(LOCKED)
+    </Entry>
+    <Entry key="LockScreen_UnlockButton">
+        잠금 해제
+    </Entry>
+    <Entry key="LockScreen_UserSessionContinueOption">
+        브라우저 잠금을 해제합니다.
+    </Entry>
+    <Entry key="LockScreen_UserSessionMessage">
+        활성 유저가 바뀌었거나 컴퓨터가 잠겼습니다! 브라우저 잠금을 해제하려면 정확한 비밀번호를 입력하세요.
+    </Entry>
+    <Entry key="LockScreen_UserSessionTerminateOption">
+        브라우저를 종료합니다.
+    </Entry>
+    <Entry key="LogWindow_AlwaysOnTop">
+        항상 위에 고정
+    </Entry>
+    <Entry key="LogWindow_AutoScroll">
+        자동 스크롤
+    </Entry>
+    <Entry key="LogWindow_Title">
+        어플리케이션 로그
+    </Entry>
+    <Entry key="MessageBox_ApplicationAutoTerminationQuestion">
+        새 세션을 시작하려면 아래의 어플리케이션을 종료해야 합니다. 어플리케이션을 자동으로 종료할까요?
+    </Entry>
+    <Entry key="MessageBox_ApplicationAutoTerminationQuestionTitle">
+        어플리케이션 실행 감지됨
+    </Entry>
+    <Entry key="MessageBox_ApplicationAutoTerminationDataLossWarning">
+        경고: 저장하지 않은 데이터가 유실될 수 있습니다!
+    </Entry>
+    <Entry key="MessageBox_ApplicationError">
+        원상 복구 불가능한 에러가 발생하였습니다! 원인을 파악하려면 로그 파일을 확인하세요. 브라우저가 곧 종료됩니다..
+    </Entry>
+    <Entry key="MessageBox_ApplicationErrorTitle">
+        어플리케이션 에러
+    </Entry>
+    <Entry key="MessageBox_ApplicationInitializationFailure">
+        %%NAME%% 어플리케이션을 초기화할 수 없어, 새 세션에서 어플리케이션을 사용할 수 없습니다. 원인을 파악하려면 로그 파일을 확인하세요.
+    </Entry>
+    <Entry key="MessageBox_ApplicationInitializationFailureTitle">
+        어플리케이션 초기화 실패
+    </Entry>
+    <Entry key="MessageBox_ApplicationNotFound">
+        시스템 안에서 %%NAME%% 어플리케이션을 찾을 수 없어, 새 세션에서 어플리케이션을 사용할 수 없습니다. 원인을 파악하려면 로그 파일을 확인하세요.
+    </Entry>
+    <Entry key="MessageBox_ApplicationNotFoundTitle">
+        어플리케이션을 찾지 못함
+    </Entry>
+    <Entry key="MessageBox_ApplicationTerminationFailure">
+        아래의 어플리케이션을 종료할 수 없습니다. 직접 어플리케이션을 종료한 후 다시 시도해주세요...
+    </Entry>
+    <Entry key="MessageBox_ApplicationTerminationFailureTitle">
+        자동 종료 실패
+    </Entry>
+    <Entry key="MessageBox_BrowserNavigationBlocked">
+        현재 환경 설정에서는 "%%URL%%"에 접근할 수 없습니다.
+    </Entry>
+    <Entry key="MessageBox_BrowserNavigationBlockedTitle">
+        차단된 페이지
+    </Entry>
+    <Entry key="MessageBox_BrowserQuitUrlConfirmation">
+        종료 URL을 감지하였습니다. 브라우저를 종료할까요?
+    </Entry>
+    <Entry key="MessageBox_BrowserQuitUrlConfirmationTitle">
+        종료 URL이 감지됨
+    </Entry>
+    <Entry key="MessageBox_CancelButton">
+        취소
+    </Entry>
+    <Entry key="MessageBox_ClientConfigurationError">
+        클라이언트 환경 설정을 하지 못하였습니다. 원인을 파악하려면 로그 파일을 확인하세요. 브라우저가 곧 종료됩니다..
+    </Entry>
+    <Entry key="MessageBox_ClientConfigurationErrorTitle">
+        환경 설정 실패
+    </Entry>
+    <Entry key="MessageBox_ClientConfigurationQuestion">
+        클라이언트 환경 설정이 저장되었으며, 다음부터 브라우저를 시작하면 이 설정이 적용됩니다. 프로그램을 종료할까요?
+    </Entry>
+    <Entry key="MessageBox_ClientConfigurationQuestionTitle">
+        환경 설정 성공
+    </Entry>
+    <Entry key="MessageBox_ConfigurationDownloadError">
+        환경 설정을 다운로드하지 못했습니다. 다시 시도하거나 담당 부서에 연락하세요.
+    </Entry>
+    <Entry key="MessageBox_ConfigurationDownloadErrorTitle">
+        다운로드 에러
+    </Entry>
+    <Entry key="MessageBox_InvalidConfigurationData">
+        "%%URI%%" 환경 설정 리소스에는 부적절한 데이터가 섞여있습니다.
+    </Entry>
+    <Entry key="MessageBox_InvalidConfigurationDataTitle">
+        환경 설정 에러
+    </Entry>
+    <Entry key="MessageBox_InvalidPasswordError">
+        비밀번호를 5번 잘못 입력하였습니다. 브라우저가 곧 종료됩니다..
+    </Entry>
+    <Entry key="MessageBox_InvalidPasswordErrorTitle">
+        비밀번호가 다릅니다
+    </Entry>
+    <Entry key="MessageBox_InvalidQuitPassword">
+        브라우저를 종료하려면 정확한 종료용 비밀번호를 입력하세요.
+    </Entry>
+    <Entry key="MessageBox_InvalidQuitPasswordTitle">
+        종료용 비밀번호가 다릅니다
+    </Entry>
+    <Entry key="MessageBox_InvalidUnlockPassword">
+        브라우저 잠금을 해제하려면 정확한 비밀번호를 입력하세요.
+    </Entry>
+    <Entry key="MessageBox_InvalidUnlockPasswordTitle">
+        잠금 해제 비밀번호 틀림
+    </Entry>
+    <Entry key="MessageBox_NoButton">
+        아니요
+    </Entry>
+    <Entry key="MessageBox_NotSupportedConfigurationResource">
+        "%%URI%%" 환경 설정 리소스는 지원되지 않습니다.
+    </Entry>
+    <Entry key="MessageBox_NotSupportedConfigurationResourceTitle">
+        환경 설정 에러
+    </Entry>
+    <Entry key="MessageBox_OkButton">
+        예
+    </Entry>
+    <Entry key="MessageBox_Quit">
+        브라우저를 종료할까요?
+    </Entry>
+    <Entry key="MessageBox_QuitTitle">
+        종료할까요?
+    </Entry>
+    <Entry key="MessageBox_QuitError">
+        종료 요청을 처리하는데 시간이 너무 오래 걸립니다.
+    </Entry>
+    <Entry key="MessageBox_QuitErrorTitle">
+        종료 에러
+    </Entry>
+    <Entry key="MessageBox_ReconfigurationDenied">
+        브라우저의 환경을 재설정할 권한이 없습니다.
+    </Entry>
+    <Entry key="MessageBox_ReconfigurationDeniedTitle">
+        환경 재설정이 거부됨
+    </Entry>
+    <Entry key="MessageBox_ReconfigurationError">
+        환경 재설정 요청을 처리하는데 시간이 너무 오래 걸립니다.
+    </Entry>
+    <Entry key="MessageBox_ReconfigurationErrorTitle">
+        환경 재설정 에러
+    </Entry>
+    <Entry key="MessageBox_ReloadConfirmation">
+        현재 페이지를 새로고침 할까요?
+    </Entry>
+    <Entry key="MessageBox_ReloadConfirmationTitle">
+        새로고침 할까요?
+    </Entry>
+    <Entry key="MessageBox_ServiceUnavailableError">
+        반드시 설정되어야 하는 브라우저 서비스를 초기화하지 못하였습니다. 브라우저가 곧 종료됩니다.
+    </Entry>
+    <Entry key="MessageBox_ServiceUnavailableErrorTitle">
+        서비스 불가
+    </Entry>
+    <Entry key="MessageBox_ServiceUnavailableWarning">
+        일부 브라우저 서비스를 초기화하지 못하였으나, 남은 초기화를 계속 진행합니다.
+    </Entry>
+    <Entry key="MessageBox_ServiceUnavailableWarningTitle">
+        서비스 불가
+    </Entry>
+    <Entry key="MessageBox_SessionStartError">
+        새 세션을 실행하지 못하였습니다. 원인을 파악하려면 로그 파일을 확인하세요.
+    </Entry>
+    <Entry key="MessageBox_SessionStartErrorTitle">
+        세션 시작 에러
+    </Entry>
+    <Entry key="MessageBox_ShutdownError">
+        종료 도중 예상치 못한 에러가 발생하였습니다. 원인을 파악하려면 로그 파일을 확인하세요.
+    </Entry>
+    <Entry key="MessageBox_ShutdownErrorTitle">
+        종료 에러
+    </Entry>
+    <Entry key="MessageBox_StartupError">
+        실행 도중 예상치 못한 에러가 발생하였습니다. 원인을 파악하려면 로그 파일을 확인하세요.
+    </Entry>
+    <Entry key="MessageBox_StartupErrorTitle">
+        실행 에러
+    </Entry>
+    <Entry key="MessageBox_UnexpectedConfigurationError">
+        "%%URI%%" 환경 설정 리소스를 로딩하는 도중 예상치 못한 에러가 발생하였습니다. 원인을 파악하려면 로그 파일을 확인하세요.
+    </Entry>
+    <Entry key="MessageBox_UnexpectedConfigurationErrorTitle">
+        환경 설정 에러
+    </Entry>
+    <Entry key="MessageBox_VirtualMachineNotAllowed">
+        가상 머신에서는 브라우저를 사용할 수 없습니다.
+    </Entry>
+    <Entry key="MessageBox_VirtualMachineNotAllowedTitle">
+        가상 머신 감지됨
+    </Entry>
+    <Entry key="MessageBox_YesButton">
+        예
+    </Entry>
+    <Entry key="Notification_AboutTooltip">
+        브라우저 정보
+    </Entry>
+    <Entry key="Notification_LogTooltip">
+        어플리케이션 로그
+    </Entry>
+    <Entry key="OperationStatus_CloseRuntimeConnection">
+        런타임 연결 종료
+    </Entry>
+    <Entry key="OperationStatus_EmptyClipboard">
+        클립보드 비우기
+    </Entry>
+    <Entry key="OperationStatus_FinalizeApplications">
+        Finalizing applications
+    </Entry>
+    <Entry key="OperationStatus_FinalizeServer">
+        Finalizing SEB-Server
+    </Entry>
+    <Entry key="OperationStatus_FinalizeServiceSession">
+        Finalizing service session
+    </Entry>
+    <Entry key="OperationStatus_FinalizeSystemEvents">
+        Finalizing system events
+    </Entry>
+    <Entry key="OperationStatus_InitializeApplications">
+        Initializing applications
+    </Entry>
+    <Entry key="OperationStatus_InitializeBrowser">
+        Initializing browser
+    </Entry>
+    <Entry key="OperationStatus_InitializeConfiguration">
+        Initializing configuration
+    </Entry>
+    <Entry key="OperationStatus_InitializeKioskMode">
+        Initializing kiosk mode
+    </Entry>
+    <Entry key="OperationStatus_InitializeRuntimeConnection">
+        Initializing runtime connection
+    </Entry>
+    <Entry key="OperationStatus_InitializeServer">
+        Initializing SEB-Server
+    </Entry>
+    <Entry key="OperationStatus_InitializeServiceSession">
+        Initializing service session
+    </Entry>
+    <Entry key="OperationStatus_InitializeSession">
+        Initializing new session
+    </Entry>
+    <Entry key="OperationStatus_InitializeShell">
+        Initializing user interface
+    </Entry>
+    <Entry key="OperationStatus_InitializeSystemEvents">
+        Initializing system events
+    </Entry>
+    <Entry key="OperationStatus_InitializeWorkingArea">
+        Initializing working area
+    </Entry>
+    <Entry key="OperationStatus_RestartCommunicationHost">
+        Restarting communication host
+    </Entry>
+    <Entry key="OperationStatus_RestoreWorkingArea">
+        Restoring working area
+    </Entry>
+    <Entry key="OperationStatus_RevertKioskMode">
+        Reverting kiosk mode
+    </Entry>
+    <Entry key="OperationStatus_StartClient">
+        Starting client
+    </Entry>
+    <Entry key="OperationStatus_StartCommunicationHost">
+        Starting communication host
+    </Entry>
+    <Entry key="OperationStatus_StartKeyboardInterception">
+        Starting keyboard interception
+    </Entry>
+    <Entry key="OperationStatus_StartMouseInterception">
+        Starting mouse interception
+    </Entry>
+    <Entry key="OperationStatus_StopClient">
+        Stopping client
+    </Entry>
+    <Entry key="OperationStatus_StopCommunicationHost">
+        Stopping communication host
+    </Entry>
+    <Entry key="OperationStatus_StopKeyboardInterception">
+        Stopping keyboard interception
+    </Entry>
+    <Entry key="OperationStatus_StopMouseInterception">
+        Stopping mouse interception
+    </Entry>
+    <Entry key="OperationStatus_TerminateBrowser">
+        Terminating browser
+    </Entry>
+    <Entry key="OperationStatus_TerminateShell">
+        Terminating user interface
+    </Entry>
+    <Entry key="OperationStatus_ValidateVirtualMachinePolicy">
+        Validating virtual machine policy
+    </Entry>
+    <Entry key="OperationStatus_WaitExplorerStartup">
+        Waiting for Windows explorer to start up
+    </Entry>
+    <Entry key="OperationStatus_WaitExplorerTermination">
+        Waiting for Windows explorer to shut down
+    </Entry>
+    <Entry key="OperationStatus_WaitRuntimeDisconnection">
+        Waiting for the runtime to disconnect
+    </Entry>
+    <Entry key="PasswordDialog_Cancel">
+        취소
+    </Entry>
+    <Entry key="PasswordDialog_Confirm">
+        확인
+    </Entry>
+    <Entry key="PasswordDialog_LocalAdminPasswordRequired">
+        클라이언트 환경 설정을 바꾸려면 관리자용 비밀번호를 입력하세요:
+    </Entry>
+    <Entry key="PasswordDialog_LocalAdminPasswordRequiredTitle">
+        관리자용 비밀번호 요청
+    </Entry>
+    <Entry key="PasswordDialog_LocalSettingsPasswordRequired">
+        클라이언트 환경 설정을 바꾸려면 설정용 비밀번호를 입력하세요:
+    </Entry>
+    <Entry key="PasswordDialog_LocalSettingsPasswordRequiredTitle">
+        설정용 비밀번호 요청
+    </Entry>
+    <Entry key="PasswordDialog_QuitPasswordRequired">
+        브라우저 종료용 비밀번호를 입력하세요:
+    </Entry>
+    <Entry key="PasswordDialog_QuitPasswordRequiredTitle">
+        종료용 비밀번호 요청
+    </Entry>
+    <Entry key="PasswordDialog_SettingsPasswordRequired">
+        선택한 설정을 바꾸려면 세팅용 비밀번호를 입력하세요:
+    </Entry>
+    <Entry key="PasswordDialog_SettingsPasswordRequiredTitle">
+        세팅용 비밀번호 요청
+    </Entry>
+    <Entry key="RuntimeWindow_ApplicationRunning">
+        브라우저가 실행 중입니다.
+    </Entry>
+    <Entry key="ServerFailureDialog_Abort">
+        Abort
+    </Entry>
+    <Entry key="ServerFailureDialog_Fallback">
+        Fallback
+    </Entry>
+    <Entry key="ServerFailureDialog_Message">
+        브라우저 서버와 연결하는 도중 에러가 발생하였습니다.
+    </Entry>
+    <Entry key="ServerFailureDialog_Retry">
+        재시도
+    </Entry>
+    <Entry key="ServerFailureDialog_Title">
+        브라우저 서버 에러
+    </Entry>
+    <Entry key="Shell_QuitButton">
+        세션 종료
+    </Entry>
+    <Entry key="SystemControl_AudioDeviceInfo">
+        %%NAME%%: %%VOLUME%%%
+    </Entry>
+    <Entry key="SystemControl_AudioDeviceInfoMuted">
+        %%NAME%%: Muted
+    </Entry>
+    <Entry key="SystemControl_AudioDeviceMuteTooltip">
+        오디오를 끄려면 클릭
+    </Entry>
+    <Entry key="SystemControl_AudioDeviceNotFound">
+        사용 가능한 오디오 장치 없음
+    </Entry>
+    <Entry key="SystemControl_AudioDeviceUnmuteTooltip">
+        오디오를 켜려면 클릭
+    </Entry>
+    <Entry key="SystemControl_BatteryCharging">
+        충전 중... (%%CHARGE%%%)
+    </Entry>
+    <Entry key="SystemControl_BatteryCharged">
+        충전 완료 (%%CHARGE%%%)
+    </Entry>
+    <Entry key="SystemControl_BatteryChargeCriticalWarning">
+        배터리가 너무 부족합니다. 배터리를 충전해주세요.
+    </Entry>
+    <Entry key="SystemControl_BatteryChargeLowInfo">
+        배터리가 너무 부족합니다. 배터리를 충전해주세요.
+    </Entry>
+    <Entry key="SystemControl_BatteryRemainingCharge">
+        %%HOURS%%h %%MINUTES%%min 남음 (%%CHARGE%%%)
+    </Entry>
+    <Entry key="SystemControl_KeyboardLayoutTooltip">
+        사용 중인 키보드 레이아웃: "%%LAYOUT%%"
+    </Entry>
+    <Entry key="SystemControl_WirelessConnected">
+        "%%NAME%%" 에 연결됨
+    </Entry>
+    <Entry key="SystemControl_WirelessConnecting">
+        연결 중...
+    </Entry>
+    <Entry key="SystemControl_WirelessDisconnected">
+        연결 끊김
+    </Entry>
+    <Entry key="SystemControl_WirelessNotAvailable">
+        사용할 수 있는 무선 네트워크 어댑터 없음
+    </Entry>
+    <Entry key="Version">
+        Version
+    </Entry>
+</Text>
