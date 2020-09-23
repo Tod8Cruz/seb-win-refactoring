@@ -18,7 +18,7 @@
             <ComponentGroupRef Id="ConfigurationComponents" />
             <ComponentGroupRef Id="ResetComponents" />
             <ComponentGroupRef Id="ServiceComponents" />
-            <ComponentGroupRef Id="Chrominimum" />
+            <ComponentGroupRef Id="ChrominimumComponents" />
             <ComponentRef Id="ShortcutComponent" />
         </Feature>
         <InstallExecuteSequence>

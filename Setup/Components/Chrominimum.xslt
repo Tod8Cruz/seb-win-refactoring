@@ -10,9 +10,9 @@
     <xsl:copy>
       <xsl:apply-templates select="@*|node()" />
       <xsl:attribute name="Id">
-        <xsl:text>MainExecutable</xsl:text>
+        <xsl:text>ChrominimumAppExecutable</xsl:text>
       </xsl:attribute>
     </xsl:copy>
-    <wix:File Id="ApplicationIconFile" Source="Resources\Chrominimum.ico" />
+    <wix:File Id="ChrominimumApplicationIconFile" Source="Resources\Chrominimum.ico" />
   </xsl:template>
 </xsl:stylesheet>
