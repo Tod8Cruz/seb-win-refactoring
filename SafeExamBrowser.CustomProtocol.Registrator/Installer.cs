@@ -10,7 +10,8 @@ namespace SafeExamBrowser.CustomProtocol.Registrator
 			try
 			{
 				var key = Registry.CurrentUser.OpenSubKey(@"Software\Classes", false);
-				var rkRoot = key.OpenSubKey(protocolName, RegistryKeyPermissionCheck.ReadSubTree);
+				var rkRoot = key?.OpenSubKey(protocolName, RegistryKeyPermissionCheck.ReadSubTree);
+				if (rkRoot == null) return false;
 				var rkRootUrlProtocolValue = rkRoot.GetValue("URL Protocol");
 
 				if ((rkRootUrlProtocolValue as string) != "") return false;
