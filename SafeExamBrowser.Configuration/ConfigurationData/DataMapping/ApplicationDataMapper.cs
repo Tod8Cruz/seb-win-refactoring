@@ -6,6 +6,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
+using System;
 using System.Collections.Generic;
 using SafeExamBrowser.Settings;
 using SafeExamBrowser.Settings.Applications;
@@ -49,7 +50,7 @@ namespace SafeExamBrowser.Configuration.ConfigurationData.DataMapping
 
 							if (applicationData.TryGetValue(Keys.Applications.ExecutableName, out v) && v is string executableName)
 							{
-								application.ExecutableName = executableName;
+								application.ExecutableName = Environment.ExpandEnvironmentVariables(executableName);
 							}
 
 							if (applicationData.TryGetValue(Keys.Applications.OriginalName, out v) && v is string originalName)
@@ -127,12 +128,12 @@ namespace SafeExamBrowser.Configuration.ConfigurationData.DataMapping
 
 							if (applicationData.TryGetValue(Keys.Applications.ExecutableName, out v) && v is string executableName)
 							{
-								application.ExecutableName = executableName;
+								application.ExecutableName = Environment.ExpandEnvironmentVariables(executableName);
 							}
 
 							if (applicationData.TryGetValue(Keys.Applications.ExecutablePath, out v) && v is string executablePath)
 							{
-								application.ExecutablePath = executablePath;
+								application.ExecutablePath = Environment.ExpandEnvironmentVariables(executablePath);
 							}
 
 							if (applicationData.TryGetValue(Keys.Applications.OriginalName, out v) && v is string originalName)

@@ -130,15 +130,15 @@ namespace SafeExamBrowser.Runtime
 		{
 			if (Installer.IsProtocolAlreadyRegistered(protocolName))
 			{
-				logger.Info($"Custom URL protocol ({protocolName}) already registered. Skipping.");
+				logger.Info($"Custom URL protocol ({protocolName}) already registered. Unregistering.");
+				Installer.UnregisterProtocol(protocolName);
 			}
-			else
-			{
-				logger.Info(
-					Installer.RegisterProtocol(appConfig, protocolName, System.Reflection.Assembly.GetExecutingAssembly().Location)
-						? $"Custom URL protocols ({protocolName}) successfully registered."
-						: $"Failed to register custom URL protocol ({protocolName}).");
-			}
+
+			logger.Info(
+				Installer.RegisterProtocol(appConfig, protocolName,
+					System.Reflection.Assembly.GetExecutingAssembly().Location)
+					? $"Custom URL protocols ({protocolName}) successfully registered."
+					: $"Failed to register custom URL protocol ({protocolName}).");
 		}
 
 		internal void Terminate()

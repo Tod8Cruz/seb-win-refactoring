@@ -7,6 +7,7 @@
  */
 
 using System;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -40,6 +41,7 @@ namespace SafeExamBrowser.Runtime
 		{
 			if (NoInstanceRunning())
 			{
+				Environment.SetEnvironmentVariable("MonitoPath", Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location));
 				new App().Run();
 			}
 			else

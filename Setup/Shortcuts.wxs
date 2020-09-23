@@ -13,7 +13,6 @@
                       Description="Provides options to reset any changes made by the main application." />
             <RemoveFolder Id="RemoveStartMenuDirectory" On="uninstall" />
             <RegistryValue Root="HKCU" Key="Software\[Manufacturer]\[ProductName]" Name="installed" Type="integer" Value="1" KeyPath="yes" />
-            <Environment Id="MonitoDir" Name="MonitoPath" Action="set" Permanent="yes" System="yes" Part="last" Value="[InstallFolder]" />
         </Component>
     </Fragment>
 </Wix>
