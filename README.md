@@ -55,15 +55,18 @@ Please find End User License Agreement file under "Setup\Resources\License.rtf"
 
 ### Cloning Git sources
 
-1. Clone git repository 'git clone --recursive https://github.com/grepp/seb-win-refactoring.git'
-2. Fetch updates 'git fetch'
-3. pull chrominimum sources as a Git submodule 'git submodule update'
+1. Clone git repository `git clone --recursive https://github.com/grepp/seb-win-refactoring.git`
+2. Fetch updates `git fetch`
+3. (Skipped if you did it before). `git submodule init --"Chrominimum"`
+3. Pull SEB sources by using `git pull` and chrominimum sources as a Git submodule `git submodule update`
 
 ** Now you can open a solution in your Visual Studio and build a solution **
 ** Do not forget to select RELEASE configuration for solution otherwise you will get a assemblies with debug information included **
+** Also, for successful build the Bundlesetup project you should build solution in the following configurations 'Release x86' and 'Release x64' **
 
-* The build process will fail on a step of bulding Installers, because both of project "Setup" and "SetupBundle" preconfigured to sign each module and installation files.
-Since we don't have a configured certificate, we should reconfigure it:
+Currently solution is configured to use any valid (auto-mode) certificate from the local certificate store for signing.
+For production version it must been changed to a special valid certificate
+So, here what we should do to reconfigure it:
 - Right-click on Setup/SetupBundle project -> Properties -> Build events
 - Check "Pre-Build" events. For each line which starting from "signtool" please check parameter options and modify it for a proper certificate
 - Also please check files "Setup.wixproj" and "SetupBundle.wixproj" in editor (like notepad) for a correct signtool parameters.
