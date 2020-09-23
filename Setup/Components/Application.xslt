@@ -6,7 +6,7 @@
             <xsl:apply-templates select="@*|node()" />
         </xsl:copy>
     </xsl:template>
-    <xsl:template match="wix:File[substring(@Source, string-length(@Source) - string-length('SafeExamBrowser.exe') + 1) = 'SafeExamBrowser.exe']">
+    <xsl:template match="wix:File[substring(@Source, string-length(@Source) - string-length('Monito.exe') + 1) = 'Monito.exe']">
         <xsl:copy>
             <xsl:apply-templates select="@*|node()" />
             <xsl:attribute name="Id">
@@ -14,12 +14,6 @@
             </xsl:attribute>
         </xsl:copy>
         <wix:File Id="ApplicationIconFile" Source="Resources\Application.ico" />
-        <wix:File Id="ConfigurationIconFile" Source="Resources\ConfigurationFile.ico" />
-        <wix:ProgId Id="ConfigurationFileExtension" Description="SEB Configuration File" Icon="ConfigurationIconFile" Advertise="no">
-            <wix:Extension Id="seb" ContentType="application/seb" Advertise="no">
-                <wix:Verb Id="open" Command="Open" Argument="&quot;%1&quot;" TargetFile="MainExecutable" />
-            </wix:Extension>
-        </wix:ProgId>
         <wix:RegistryKey Root="HKCR" Key="monito">
             <wix:RegistryValue Value="URL:Monito Protocol" Type="string" />
             <wix:RegistryValue Name="URL Protocol" Value="" Type="string" />

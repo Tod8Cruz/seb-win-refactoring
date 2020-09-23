@@ -41,7 +41,12 @@ namespace SafeExamBrowser.Runtime
 		{
 			if (NoInstanceRunning())
 			{
-				Environment.SetEnvironmentVariable("MonitoPath", Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location));
+				var monitoFolder = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+				if (monitoFolder.EndsWith("\\Application", StringComparison.InvariantCultureIgnoreCase))
+				{
+					monitoFolder = monitoFolder.Substring(0, monitoFolder.Length - 12);
+				}
+				Environment.SetEnvironmentVariable("MonitoPath", monitoFolder);
 				new App().Run();
 			}
 			else

@@ -13,7 +13,7 @@
                     <Directory Id="ConfigurationDirectory" Name="Configuration" />
                     <Directory Id="ResetDirectory" Name="Reset" />
                     <Directory Id="ServiceDirectory" Name="Service" />
-                    <Directory Id="Chrominimum" Name="Chrominimum" />
+                    <Directory Id="ChrominimumDirectory" Name="Chrominimum" />
                 </Directory>
             </Directory>
             <Directory Id="ProgramMenuFolder">
