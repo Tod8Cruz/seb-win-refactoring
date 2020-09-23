@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-    <Product Name="Safe Exam Browser ($(var.Platform))" Manufacturer="ETH Zürich" Language="1033" Codepage="1252"
-             Id="*" Version="!(bind.fileVersion.MainExecutable)" UpgradeCode="97A8B13E-48FB-4BE1-A7C2-DD1863F95CCB">
+    <Product Name="Monito ($(var.Platform))" Manufacturer="Grepp" Language="1033" Codepage="1252"
+             Id="*" Version="!(bind.fileVersion.MainExecutable)" UpgradeCode="EEC83523-4CE6-411C-AD08-DD477C849206">
         <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
         <MediaTemplate EmbedCab="yes" />
         <UIRef Id="WixUI_Minimal" />
@@ -13,11 +13,12 @@
         <WixVariable Id="WixUILicenseRtf" Value="Resources\License.rtf" />
         <WixVariable Id="WixUIBannerBmp" Value="Resources\Banner.bmp" />
         <WixVariable Id="WixUIDialogBmp" Value="Resources\Dialog.bmp" />
-        <Feature Id="ProductFeature" Title="Safe Exam Browser" Level="1">
+        <Feature Id="ProductFeature" Title="Monito" Level="1">
             <ComponentGroupRef Id="ApplicationComponents" />
             <ComponentGroupRef Id="ConfigurationComponents" />
             <ComponentGroupRef Id="ResetComponents" />
             <ComponentGroupRef Id="ServiceComponents" />
+            <ComponentGroupRef Id="Chrominimum" />
             <ComponentRef Id="ShortcutComponent" />
         </Feature>
         <InstallExecuteSequence>
