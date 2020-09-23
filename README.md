@@ -31,6 +31,9 @@ SEB 3.x requires the prerequisites listed below in order to work correctly. Thes
 
 ## Build Instruction
 
+### License file
+Please find End User License Agreement file under "Setup\Resources\License.rtf"
+
 ### Prerequisites
 
 1. Make sure that .NET Framework and Visual C++ Redistributable (see links above) installed
@@ -42,7 +45,7 @@ SEB 3.x requires the prerequisites listed below in order to work correctly. Thes
 * x86 -> c:\Program Files (x86)\Windows Kits\10\bin\x86\
 * x64 -> c:\Program Files (x86)\Windows Kits\10\bin\x64\
 7. Next, depends on your system architecture (I assume you have 64bit windows installed), copy to clipboard a path to "signtool.exe"
-8. We need to make that path accessible from Windows command line. Go to Environment System settings:
+8. We need to make sure that path is accessible from Windows command line. Go to Environment System settings:
 * Press WIN + PAUSE buttons on a keyboard
 * Click the "Advanced System Settings" link on the left. In the next dialog, you will see the Environment Variables... button in the bottom of the Advanced tab.
 * Under the lower table (System variables) click "Create" and give a name "Win10SDK", and paste a path you have copied at step 7.
@@ -52,10 +55,9 @@ SEB 3.x requires the prerequisites listed below in order to work correctly. Thes
 
 ### Cloning Git sources
 
-1. Since you're reading this I think you have already cloned a repository
-2. Git doesn't allow to commit large files. So, you should download additionally two files and place it into ".\SetupBundle\chrominimum" folder
-* https://github.com/SafeExamBrowser/Chrominimum/releases/download/1.1.0/Chrominimum_1.1.0.21_x64_Setup.msi
-* https://github.com/SafeExamBrowser/Chrominimum/releases/download/1.1.0/Chrominimum_1.1.0.21_x86_Setup.msi
+1. Clone git repository 'git clone --recursive https://github.com/grepp/seb-win-refactoring.git'
+2. Fetch updates 'git fetch'
+3. pull chrominimum sources as a Git submodule 'git submodule update'
 
 ** Now you can open a solution in your Visual Studio and build a solution **
 ** Do not forget to select RELEASE configuration for solution otherwise you will get a assemblies with debug information included **
