@@ -88,6 +88,7 @@ namespace SafeExamBrowser.Applications
 			paths.Add(new[] { Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), settings.ExecutableName });
 			paths.Add(new[] { Environment.GetFolderPath(Environment.SpecialFolder.System), settings.ExecutableName });
 			paths.Add(new[] { Environment.GetFolderPath(Environment.SpecialFolder.SystemX86), settings.ExecutableName });
+			paths.Add(new[] { Environment.GetEnvironmentVariable("MonitoPath"), settings.ExecutableName });
 
 			if (settings.ExecutablePath != default(string))
 			{
@@ -96,6 +97,7 @@ namespace SafeExamBrowser.Applications
 				paths.Add(new[] { Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), settings.ExecutablePath, settings.ExecutableName });
 				paths.Add(new[] { Environment.GetFolderPath(Environment.SpecialFolder.System), settings.ExecutablePath, settings.ExecutableName });
 				paths.Add(new[] { Environment.GetFolderPath(Environment.SpecialFolder.SystemX86), settings.ExecutablePath, settings.ExecutableName });
+				paths.Add(new[] { Environment.GetEnvironmentVariable("MonitoPath"), settings.ExecutablePath, settings.ExecutableName });
 			}
 
 			if (registryPath != default(string))
