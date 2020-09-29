@@ -86,9 +86,9 @@
     <SignOutput>true</SignOutput>
   </PropertyGroup>
   <Target Name="SignBundleEngine">
-    <Exec Command="signtool sign /a &quot;@(SignBundleEngine)&quot;" />
+    <Exec Command="signtool sign /d &quot;Monito&quot; /f $(SolutionDir)Certificate\monito.pfx /p &quot;123&quot; &quot;%(SignBundleEngine)&quot;"/>
   </Target>
   <Target Name="SignBundle">
-    <Exec Command="signtool sign /a &quot;@(SignBundle)&quot;" />
+    <Exec Command="signtool sign /d &quot;Monito&quot; /f $(SolutionDir)Certificate\monito.pfx /p &quot;123&quot; &quot;%(SignBundle)&quot;"/>
   </Target>
 </Project>

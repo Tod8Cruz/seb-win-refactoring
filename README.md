@@ -58,17 +58,30 @@ Please find End User License Agreement file under "Setup\Resources\License.rtf"
 1. Clone git repository `git clone --recursive https://github.com/grepp/seb-win-refactoring.git`
 2. Fetch updates `git fetch`
 3. (Skipped if you did it before). `git submodule init --"Chrominimum"`
-3. Pull SEB sources by using `git pull` and chrominimum sources as a Git submodule `git submodule update`
+4. Pull SEB sources by using `git pull` and chrominimum sources as a Git submodule `git submodule update`
 
 ** Now you can open a solution in your Visual Studio and build a solution **
 ** Do not forget to select RELEASE configuration for solution otherwise you will get a assemblies with debug information included **
 ** Also, for successful build the Bundlesetup project you should build solution in the following configurations 'Release x86' and 'Release x64' **
 
-Currently solution is configured to use any valid (auto-mode) certificate from the local certificate store for signing.
+
+### Certificate for development
+
+0) Please check a $\Certificate folder. If there is no pfx file inside, please Open PowerShell inside a folder: (Solution Directory)/Certificate
+
+1) Create certificate:
+`$cert = New-SelfSignedCertificate -DnsName localhost -Type CodeSigning -CertStoreLocation Cert:\CurrentUser\My`
+
+2) set the password for it:
+`$CertPassword = ConvertTo-SecureString -String "123" -Force –AsPlainText`
+
+3) Export it:
+`Export-PfxCertificate -Cert "cert:\CurrentUser\My\$($cert.Thumbprint)" -FilePath "monito.pfx" -Password $CertPassword`
+
 For production version it must been changed to a special valid certificate
 So, here what we should do to reconfigure it:
 - Right-click on Setup/SetupBundle project -> Properties -> Build events
 - Check "Pre-Build" events. For each line which starting from "signtool" please check parameter options and modify it for a proper certificate
-- Also please check files "Setup.wixproj" and "SetupBundle.wixproj" in editor (like notepad) for a correct signtool parameters.
+- Also please check files "Setup.wixproj" and "SetupBundle.wixproj" in editor (like notepad) for a correct signtool parameters (like filename and passowrd).
 
 !!!
