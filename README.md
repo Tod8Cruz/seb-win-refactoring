@@ -67,7 +67,7 @@ Please find End User License Agreement file under "Setup\Resources\License.rtf"
 
 ### Certificate for development
 
-0) Please check a $\Certificate folder. If there is no pfx file inside, please Open PowerShell inside a folder: (Solution Directory)/Certificate
+0) Please check a $\Certificate folder. If there is no "monito.pfx" file inside, please Open PowerShell inside a folder: (Solution Directory)/Certificate
 
 1) Create certificate:
 `$cert = New-SelfSignedCertificate -DnsName localhost -Type CodeSigning -CertStoreLocation Cert:\CurrentUser\My`
