@@ -1,10 +1,15 @@
-In order to create a certificate for delelopment purposes, please open PowerShell here (inside a folder)
+1) Please install OpenSSL. Windows version could be found here: http://slproweb.com/products/Win32OpenSSL.html
 
-1) Create certificate:
-$cert = New-SelfSignedCertificate -DnsName localhost -Type CodeSigning -CertStoreLocation Cert:\CurrentUser\My
+2) Run OpenSSL Command-Line prompt 
 
-2) set the password for it:
-$CertPassword = ConvertTo-SecureString -String "123" -Force –AsPlainText
+3) Switch to 'Cerfiticate' folder inside a solution directory
 
-3) Export it:
-Export-PfxCertificate -Cert "cert:\CurrentUser\My\$($cert.Thumbprint)" -FilePath "monito.pfx" -Password $CertPassword
+4) execute openssl `openssl.exe`
+
+5) paste following command `req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout monito_private.key -out monito_certificate.crt`
+
+6) `openssl pkcs12 -export -out monito.pfx -inkey monito_private.key -in monito_certificate.crt`
+
+7) When password asked, for development purposes please use '123' as a password
+
+8) PROFIT!! now we have a pfx container with certificate and a private key
