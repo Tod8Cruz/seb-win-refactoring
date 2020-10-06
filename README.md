@@ -81,7 +81,9 @@ Please find End User License Agreement file under "Setup\Resources\License.rtf"
 
 7) When password asked, for development purposes please use '123' as a password
 
-8) PROFIT!! now we have a pfx container with certificate and a private key
+8) Copy `monito.pfx` file into "Monito.Version" project with replacememnt an existing certificate PFX container
+
+9) PROFIT!! now we have a pfx container with certificate and a private key
 
 For production version it must been changed to a special valid certificate
 So, here what we should do to reconfigure it:
@@ -89,4 +91,7 @@ So, here what we should do to reconfigure it:
 - Check "Pre-Build" events. For each line which starting from "signtool" please check parameter options and modify it for a proper certificate
 - Also please check files "Setup.wixproj" and "SetupBundle.wixproj" in editor (like notepad) for a correct signtool parameters (like filename and passowrd).
 
-!!!
+## Versioning
+
+Since version number is a part of security subsystem - hash generation, please note that each time you change a version number, and old data like browserExamKey won't be valid anymore.
+To change (increment) a version number please modify a `version` tag inside "Monito.Version.csproj" file or you may use Visual Studio UI (Right-click -> Properties -> Package)
