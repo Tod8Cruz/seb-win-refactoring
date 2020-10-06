@@ -196,10 +196,15 @@
   <ItemGroup>
     <Content Include="ConfigurationTool.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Monito.Version\Monito.Version.csproj">
+      <Project>{758388bf-2d80-4d72-a0ed-02c7b15301e8}</Project>
+      <Name>Monito.Version</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>FOR /F %25%25G IN ('dir "$(SolutionDir)SebWindowsConfig\bin\$(PlatformName)\$(ConfigurationName)\*.exe" "$(SolutionDir)SebWindowsConfig\bin\$(PlatformName)\$(ConfigurationName)\*.dll" /s /b') DO signtool sign /f $(SolutionDir)Certificate\monito.pfx /p "123" %25%25G</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

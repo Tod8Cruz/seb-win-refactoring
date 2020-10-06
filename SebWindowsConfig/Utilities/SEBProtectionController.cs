@@ -10,6 +10,7 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Windows.Forms;
+using Monito.Version;
 
 //
 //  SEBProtectionController.cs
@@ -572,11 +573,11 @@ namespace SebWindowsConfig.Utilities
 		/// ----------------------------------------------------------------------------------------
 		public static string ComputeBrowserExamKey()
 		{
-			var executable = Assembly.GetExecutingAssembly();
-			var certificate = executable.Modules.First().GetSignerCertificate();
+			var certificate = SignHelper.GetCertificate();
 			var salt = (byte[]) SEBSettings.settingsCurrent[SEBSettings.KeyExamKeySalt];
 			var signature = certificate?.GetCertHashString();
-			var version = FileVersionInfo.GetVersionInfo(executable.Location).FileVersion;
+			var version = MonitoVersion.GetMonitoVersion();
+
 			var configurationKey = ComputeConfigurationKey();
 
 			using (var algorithm = new HMACSHA256(salt))

@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.1.9</Version>
+    <Company>Grepp</Company>
+    <Authors>Grepp</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="monito.pfx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="monito.pfx" />
+  </ItemGroup>
+
+</Project>
